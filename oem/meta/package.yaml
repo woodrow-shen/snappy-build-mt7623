@@ -1,0 +1,33 @@
+name: mt7623
+vendor: Woodrow Shen <woodrow.shen@canonical.com>
+icon: meta/mediatek.png
+version: 0.12
+type: oem
+
+branding:
+    name: Mediatek Inc.
+store:
+    oem-key: 123456
+
+config:
+    ubuntu-core:
+        autopilot: false
+          
+oem:
+  hardware:
+    platform: mt7623
+    architecture: armhf
+    partition-layout: system-AB
+    bootloader: u-boot
+    boot-assets:
+      files:
+        - path: boot-assets/uEnv.txt
+      raw-files:
+        - path: boot-assets/bromhdr-0.bin
+          offset: 0
+        - path: boot-assets/bromhdr-1.bin
+          offset: 512
+        - path: boot-assets/preloader_iotg7683p1_emmc.bin
+          offset: 2048 # 2K
+        - path: boot-assets/u-boot.bin
+          offset: 327680 # 320 * 1K

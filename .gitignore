@@ -1,0 +1,13 @@
+*.snap
+*.img
+*.tar.gz
+*.tar.xz
+*.img.xz
+u-boot-mtk/
+kernel/
+device/assets/
+device/preinstalled.tar.gz
+device/preinstalled/
+device/system/
+device/initrd/
+uImage
