@@ -9,7 +9,7 @@ clean:
 		if test -d "$(LINUX_SRC)" ; then $(MAKE) ARCH=arm CROSS_COMPILE=$(CC) -C $(LINUX_SRC) mrproper ; fi
 		rm -f $(LINUX_UIMAGE)
 
-distclean:
+distclean: clean
 		rm -rf $(wildcard $(LINUX_SRC))
 
 $(LINUX_SRC):

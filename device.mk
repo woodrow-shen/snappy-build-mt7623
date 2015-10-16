@@ -1,6 +1,6 @@
 include common.mk
 
-DEVICE_VERSION := "0.2"
+DEVICE_VERSION := 0.2
 DEVICE_PREINSTALLED := http://cdimage.ubuntu.com/ubuntu-core/vivid/daily-preinstalled/current/vivid-preinstalled-core-armhf.device.tar.gz
 
 DEVICE_SRC := $(PWD)/device
@@ -16,7 +16,7 @@ DEVICE_TAR := $(PWD)/device-mt7623_$(DEVICE_VERSION).tar.xz
 all: build
 
 clean:
-	rm -f $(DEVICE_UIMAGE) $(DEVICE_UINITRD) $(DEVICE_INITRD_IMG)
+	rm -f $(DEVICE_UIMAGE) $(DEVICE_UINITRD) $(DEVICE_INITRD_IMG) $(DEVICE_TAR)
 	rm -rf $(DEVICE_DTBS)
 	rm -rf $(DEVICE_MODULES)
 	rm -rf $(DEVICE_INITRD)
