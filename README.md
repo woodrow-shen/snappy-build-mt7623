@@ -8,11 +8,3 @@ install all build dependencies with the following command.
 ```bash
 sudo apt-get install build-essential u-boot-tools lzop debootstrap debootstrap gcc-arm-linux-gnueabihf
 ```
-```c
-include <stdio.h>
-
-int main()
-{
-  return 0;
-}
-```
