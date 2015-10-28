@@ -1,6 +1,5 @@
 include common.mk
 
-CC := /opt/buildroot-gcc483_arm/usr/bin/arm-linux-
 V := 0
 
 all: build

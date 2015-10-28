@@ -1,7 +1,5 @@
 include common.mk
 
-CC := /opt/buildroot-gcc483_arm/usr/bin/arm-linux-
-
 all: build
 
 clean:
