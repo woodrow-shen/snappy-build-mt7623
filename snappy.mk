@@ -8,6 +8,7 @@ SNAPPY_CORE_VER := 185
 SNAPPY_CORE_CH := edge
 OEM_SNAP := mt7623_0.12_all.snap
 REVISION ?=
+SNAPPY_WORKAROUND := no
 
 all: build
 
@@ -35,7 +36,9 @@ fix-bootflag:
 		dd conv=notrunc if=boot_fix.bin of=$(SNAPPY_IMAGE) seek=440 oflag=seek_bytes	
 
 workaround:
+ifeq ($(SNAPPY_WORKAROUND),yes)
 		./snappy-workaround.sh
+endif
 
 pack:
 		xz -0 $(SNAPPY_IMAGE)
