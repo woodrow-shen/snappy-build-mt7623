@@ -3,9 +3,9 @@ include device.mk
 
 SNAPPY_IMAGE := mediatek-15.04-snappy.img
 # yes for latest version; no for the specific revision of edge/stable channel
-SNAPPY_CORE_NEW := no
-SNAPPY_CORE_VER := 185
-SNAPPY_CORE_CH := edge
+SNAPPY_CORE_NEW := yes
+SNAPPY_CORE_VER ?=
+SNAPPY_CORE_CH := stable
 OEM_SNAP := mt7623_0.12_all.snap
 REVISION ?=
 SNAPPY_WORKAROUND := no
