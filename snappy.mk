@@ -1,7 +1,8 @@
 include common.mk
 include device.mk
 
-SNAPPY_IMAGE := mediatek-15.04-snappy.img
+SNAPPY_VERSION := 20151030-0
+SNAPPY_IMAGE := fukuoka-${SNAPPY_VERSION}.img
 # yes for latest version; no for the specific revision of edge/stable channel
 SNAPPY_CORE_NEW := yes
 SNAPPY_CORE_VER ?=

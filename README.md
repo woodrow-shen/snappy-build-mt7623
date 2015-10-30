@@ -12,7 +12,7 @@ sudo apt-get install build-essential u-boot-tools lzop debootstrap debootstrap g
 ## Quick Build
 A `Makefile` is provided to build OEM snap, U-Boot, Kernel and Initrd from source. The sources will be cloned into local folders if not there already.
 
-To build it all, just run `make`. This will produce a oem snap `mt7623_x.y_all.snap` and a `device-mt7623_x.y.tar.gz` device part, which can be used to build your own Snappy image.
+To build it all, just run `make snappy`. This will produce a oem snap `mt7623_x.y_all.snap` and a `device-mt7623_x.y.tar.gz` device part, which can be used to build your own Snappy image.
 
 ### Build U-boot
 
@@ -32,7 +32,7 @@ make oem
 make device
 ```
 
-### Flash to SD card
+## Flash to SD card
 
 ```bash
 xzcat ${image} | pv | sudo dd of=/dev/${device} bs=32M ; sync
