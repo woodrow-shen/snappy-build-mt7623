@@ -9,6 +9,14 @@ install all build dependencies with the following command.
 sudo apt-get install build-essential u-boot-tools lzop debootstrap debootstrap gcc-arm-linux-gnueabihf
 ```
 
+Then, you need to install snappy tools from PPA, for creating image.
+
+```bash
+sudo add-apt-repository -y ppa:snappy-dev/tools
+sudo apt-get update
+sudo apt-get install ubuntu-device-flash
+```
+
 ## Quick Build
 A `Makefile` is provided to build OEM snap, U-Boot, Kernel and Initrd from source. The sources will be cloned into local folders if not there already.
 
