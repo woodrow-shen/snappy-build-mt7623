@@ -9,6 +9,7 @@ install all build dependencies with the following command.
 sudo apt-get install build-essential u-boot-tools lzop debootstrap debootstrap gcc-arm-linux-gnueabihf
 ```
 
+Make sure your build environment is based on Ubuntu 14.04 or later.
 Then, you need to install snappy tools from PPA, for creating image.
 
 ```bash
