@@ -9,8 +9,7 @@ install all build dependencies with the following command.
 sudo apt-get install build-essential u-boot-tools lzop debootstrap debootstrap gcc-arm-linux-gnueabihf
 ```
 
-Make sure your build environment is based on Ubuntu 14.04 or later.
-Then, you need to install snappy tools from PPA, for creating image.
+Make sure your build environment is based on Ubuntu 14.04 or later. Then, you need to install snappy tools from PPA, for creating image.
 
 ```bash
 sudo add-apt-repository -y ppa:snappy-dev/tools
@@ -40,6 +39,9 @@ make oem
 ```bash
 make device
 ```
+
+### Rebuild a snappy
+To rebuild the snappy or other parts, just type `make clean` or `make clean-{prefix}`. The prefix will be u-boot, oem, linux, etc. 
 
 ## Flash to SD card
 
