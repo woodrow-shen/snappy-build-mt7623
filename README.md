@@ -17,6 +17,12 @@ sudo apt-get update
 sudo apt-get install ubuntu-device-flash
 ```
 
+Generate ssh key-pair if you didn¡¦t have one
+
+```bash
+ssh-keygen -t tsa
+```
+
 ## Quick Build
 A `Makefile` is provided to build OEM snap, U-Boot, Kernel and Initrd from source. The sources will be cloned into local folders if not there already.
 
