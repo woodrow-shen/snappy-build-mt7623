@@ -17,7 +17,7 @@ sudo apt-get update
 sudo apt-get install ubuntu-device-flash
 ```
 
-Generate ssh key-pair if you didn¡¦t have one
+Generate ssh key-pair if you didn't have one
 
 ```bash
 ssh-keygen -t tsa
