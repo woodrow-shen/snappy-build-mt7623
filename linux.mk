@@ -12,7 +12,7 @@ distclean: clean
 		rm -rf $(wildcard $(LINUX_SRC))
 
 $(LINUX_SRC):
-		git clone --depth=1 $(LINUX_REPO) -b $(LINUX_BRANCH) kernel
+		git clone $(LINUX_REPO) -b $(LINUX_BRANCH) kernel
 
 $(LINUX_SRC)/.config: $(LINUX_SRC)
 		$(MAKE) ARCH=arm CROSS_COMPILE=$(CC) -C $(LINUX_SRC) snappy-fargreat_defconfig
