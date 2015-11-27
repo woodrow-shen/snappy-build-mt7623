@@ -1,7 +1,7 @@
 include common.mk
 include device.mk
 
-SNAPPY_VERSION := 20151030-0
+SNAPPY_VERSION := `date +%Y%m%d`-0
 SNAPPY_IMAGE := fukuoka-${SNAPPY_VERSION}.img
 # yes for latest version; no for the specific revision of edge/stable channel
 SNAPPY_CORE_NEW := yes
@@ -14,8 +14,7 @@ SNAPPY_WORKAROUND := no
 all: build
 
 clean:
-		if test -f "$(OUTPUT_DIR)/$(SNAPPY_IMAGE)" ; then rm -r $(OUTPUT_DIR)/$(SNAPPY_IMAGE) ; fi
-		if test -f "$(OUTPUT_DIR)/$(SNAPPY_IMAGE).xz" ; then rm -r $(OUTPUT_DIR)/$(SNAPPY_IMAGE).xz ; fi
+		rm -f $(OUTPUT_DIR)/*.img.xz
 distclean: clean
 
 build-snappy:
@@ -38,7 +37,7 @@ fix-bootflag:
 
 workaround:
 ifeq ($(SNAPPY_WORKAROUND),yes)
-		./snappy-workaround.sh
+		./snappy-workaround.sh $(SNAPPY_IMAGE)
 endif
 
 pack:
