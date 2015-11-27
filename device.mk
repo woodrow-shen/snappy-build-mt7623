@@ -22,8 +22,9 @@ clean:
 	rm -rf $(DEVICE_INITRD)
 	rm -rf $(DEVICE_SRC)/preinstalled
 	rm -rf $(DEVICE_MODPROBE_D)
+	rm -rf $(DEVICE_TAR)
 
-distclean:
+distclean: clean
 	rm -rf $(DEVICE_SRC)/preinstalled.tar.gz
 
 $(DEVICE_SRC):
