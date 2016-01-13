@@ -7,7 +7,7 @@ SNAPPY_IMAGE := fukuoka-${SNAPPY_VERSION}.img
 SNAPPY_CORE_NEW := yes
 SNAPPY_CORE_VER ?=
 SNAPPY_CORE_CH := stable
-OEM_SNAP := mt7623_0.12_all.snap
+OEM_SNAP := mt7623_0.1_all.snap
 REVISION ?=
 SNAPPY_WORKAROUND := no
 
@@ -23,10 +23,8 @@ ifeq ($(SNAPPY_CORE_NEW),no)
 endif
 		@echo "build snappy..."
 		sudo ubuntu-device-flash core 15.04 -v \
-			--install webdm \
 			--oem $(OEM_SNAP) \
 			--developer-mode \
-			--enable-ssh \
 			--device-part=$(DEVICE_TAR) \
 			--channel $(SNAPPY_CORE_CH) \
 			-o $(SNAPPY_IMAGE) \

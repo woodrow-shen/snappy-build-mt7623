@@ -7,7 +7,7 @@ TOOLCHAIN := DEB
 LINUX_REPO := lp:~fukuoka-team/fukuoka/+git/kernel
 LINUX_BRANCH := master
 LINUX_SRC := $(PWD)/kernel
-LINUX_UIMAGE := $(PWD)/uImage
+LINUX_UIMAGE := $(LINUX_SRC)/arch/arm/boot/zImage
 LINUX_MODULES := $(PWD)/kernel
 #LINUX_DTB := $(LINUX_SRC)/arch/arm/boot/dts/.dtb
 

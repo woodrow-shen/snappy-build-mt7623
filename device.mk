@@ -67,12 +67,12 @@ modules:
 	@mkdir -p $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/drivers/char
 	@mkdir -p $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/net/nat/hw_nat
 	@mkdir -p $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/net/rfkill
-	cp -a  $(LINUX_MODULES)/drivers/gpu/drm/mali/mali_drm.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/drivers/gpu/drm/mali
-	cp -a  $(LINUX_MODULES)/drivers/rtc/rtc-cmos.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/drivers/rtc
-	cp -a  $(LINUX_MODULES)/drivers/char/raw.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/drivers/char
-	cp -a  $(LINUX_MODULES)/drivers/char/nvram.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/drivers/char
-	cp -a  $(LINUX_MODULES)/net/nat/hw_nat/hw_nat.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/net/nat/hw_nat
-	cp -a  $(LINUX_MODULES)/net/rfkill/rfkill-regulator.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/net/rfkill
+#	cp -a  $(LINUX_MODULES)/drivers/gpu/drm/mali/mali_drm.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/drivers/gpu/drm/mali
+#	cp -a  $(LINUX_MODULES)/drivers/rtc/rtc-cmos.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/drivers/rtc
+#	cp -a  $(LINUX_MODULES)/drivers/char/raw.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/drivers/char
+#	cp -a  $(LINUX_MODULES)/drivers/char/nvram.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/drivers/char
+#	cp -a  $(LINUX_MODULES)/net/nat/hw_nat/hw_nat.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/net/nat/hw_nat
+#	cp -a  $(LINUX_MODULES)/net/rfkill/rfkill-regulator.ko $(DEVICE_MODULES)/lib/modules/3.10.20-1-generic/net/rfkill
 
 modprobe.d:
 	@rm -rf $(DEVICE_MODPROBE_D)

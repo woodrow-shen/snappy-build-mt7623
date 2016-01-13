@@ -1,18 +1,15 @@
 mmcdev=0
 mmcpart=1
 bootpart=0:1
-kernel_file=vmlinuz
-initrd_file=initrd.img
-loadfiles=run loadkernel; run loadinitrd
-snappy_cmdline=init=/lib/systemd/systemd ro panic=-1 fixrtc
-snappy_ab=a
-snappy_stamp=snappy-stamp.txt
+kernel_file_fukuoka=vmlinuz
+initrd_file_fukuoka=initrd.img
+loadfiles_fukuoka=run loadkernel_fukuoka; run loadinitrd_fukuoka
 snappy_mode=regular
 loadaddr=0x84000000
 initrd_addr=85000000
-loadkernel=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${snappy_ab}/${kernel_file}
-loadinitrd=fatload mmc ${mmcdev}:${mmcpart} ${initrd_addr} ${snappy_ab}/${initrd_file}; setenv initrd_size ${filesize}
-mmcrootfstype=ext4
-bootargs=console=tty0 console=ttyMT2,115200n1 root=/dev/ram init=/lib/systemd/systemd ro panic=-1 fixrtc
+loadkernel_fukuoka=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${snappy_ab}/${kernel_file_fukuoka}
+loadinitrd_fukuoka=fatload mmc ${mmcdev}:${mmcpart} ${initrd_addr} ${snappy_ab}/${initrd_file_fukuoka}; setenv initrd_size ${filesize}
+mmcrootfstype=ext4 rootwait ro
 mmcargs=bootargs=root=${mmcroot} rootfstype=${mmcrootfstype}
-snappy_boot=if test "${snappy_mode}" = "try"; then if test -e mmc ${bootpart} ${snappy_stamp}; then if test "${snappy_ab}" = "a"; then setenv snappy_ab "b"; else setenv snappy_ab "a"; fi; else fatwrite mmc ${mmcdev}:${mmcpart} 0x0 ${snappy_stamp} 0; fi; fi; run loadfiles; setenv mmcroot/dev/disk/by-label/system-${snappy_ab}; run mmcargs; bootm ${loadaddr} ${initrd_addr}
+snappy_boot_fukuoka=if test "${snappy_mode}" = "try"; then if test -e mmc ${bootpart} ${snappy_stamp}; then if test "${snappy_ab}" = "a"; then setenv snappy_ab "b"; else setenv snappy_ab "a"; fi; else fatwrite mmc ${mmcdev}:${mmcpart} 0x0 ${snappy_stamp} 0; fi; fi; run loadfiles_fukuoka; setenv mmcroot /dev/disk/by-label/system-${snappy_ab} ${snappy_cmdline}; run mmcargs; bootz ${loadaddr} ${initrd_addr}:${initrd_size}
+uenvcmd=load mmc ${bootpart} ${loadaddr} snappy-system.txt; env import -t $loadaddr $filesize; run snappy_boot_fukuoka

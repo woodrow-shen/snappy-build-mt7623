@@ -1,19 +1,24 @@
 name: mt7623
-vendor: Woodrow Shen <woodrow.shen@canonical.com>
+vendor: Mediatek Inc. <woodrow.shen@canonical.com>
 icon: meta/mediatek.png
-version: 0.12
+version: 0.1
 type: oem
 
-branding:
-    name: Mediatek Inc.
-store:
-    oem-key: 123456
-
 config:
-    ubuntu-core:
-        autopilot: false
-          
+  ubuntu-core:
+    hostname: mt7623
+    services:
+        - name: ssh
+          enabled: true
+    autopilot: false
+
 oem:
+  branding:
+    name: MT7623board
+    logo: meta/mediatek.png
+  software:
+    preinstalled:
+        - webdm
   hardware:
     platform: mt7623
     architecture: armhf

@@ -29,7 +29,7 @@ $(LINUX_UIMAGE): $(LINUX_SRC)/.config
 		$(MAKE) ARCH=arm CROSS_COMPILE=$(CC) -C $(LINUX_SRC) -j$(CPUS) V=$(V)
 
 kernel: $(LINUX_UIMAGE)
-		mkimage -A arm -O linux -T kernel -C none -a 80008000 -e 80008000 -n "Linux Kernel Image" -d  $(LINUX_SRC)/arch/arm/boot/zImage uImage
+		#mkimage -A arm -O linux -T kernel -C none -a 80008000 -e 80008000 -n "Linux Kernel Image" -d  $(LINUX_SRC)/arch/arm/boot/zImage uImage
 
 modules: $(LINUX_SRC)/.config
 		$(MAKE) ARCH=arm CROSS_COMPILE=$(CC) -C $(LINUX_SRC) -j$(CPUS) modules
