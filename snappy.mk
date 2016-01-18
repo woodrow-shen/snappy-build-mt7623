@@ -7,7 +7,8 @@ SNAPPY_IMAGE := fukuoka-${SNAPPY_VERSION}.img
 SNAPPY_CORE_NEW := yes
 SNAPPY_CORE_VER ?=
 SNAPPY_CORE_CH := stable
-OEM_SNAP := mt7623_0.1_all.snap
+#OEM_SNAP := mt7623_0.1_all.snap
+OEM_SNAP := mt7623.woodrow
 REVISION ?=
 SNAPPY_WORKAROUND := no
 
@@ -24,7 +25,6 @@ endif
 		@echo "build snappy..."
 		sudo ubuntu-device-flash core 15.04 -v \
 			--oem $(OEM_SNAP) \
-			--developer-mode \
 			--device-part=$(DEVICE_TAR) \
 			--channel $(SNAPPY_CORE_CH) \
 			-o $(SNAPPY_IMAGE) \

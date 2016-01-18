@@ -1,8 +1,11 @@
 name: mt7623
 vendor: Mediatek Inc. <woodrow.shen@canonical.com>
 icon: meta/mediatek.png
-version: 0.1
+version: 0.12
 type: oem
+architectures: [armhf]
+frameworks:
+    - ubuntu-core-15.04-dev1
 
 config:
   ubuntu-core:
